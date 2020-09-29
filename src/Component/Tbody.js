@@ -1,7 +1,7 @@
 import React from "react";
 
 function Tbody() {
-  const List = [
+  let List = [
     {
       id: 1,
       Name: "Charlie",
@@ -23,12 +23,19 @@ function Tbody() {
       SN: "Bartender"
     }
   ];
-  const fList = List.map((pers, index) => (
-    <tr>
-      <td>{pers.Name}</td>
+  function clickHandler(personId) {
+    List = List.filter((p) => p.id !== personId);
+    console.log(List);
+  }
+  let fList = List.map((pers, index) => (
+    <tr key={pers.id}>
+      <td id="Name">{pers.Name}</td>
       <td>{pers.SN}</td>
+      <button className="dltButton" onClick={() => clickHandler(pers.id)}>
+        Delete
+      </button>
     </tr>
   ));
-  return <> {fList}</>;
+  return <React.Fragment> {fList}</React.Fragment>;
 }
 export default Tbody;

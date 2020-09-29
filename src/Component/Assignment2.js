@@ -1,13 +1,14 @@
 import React from "react";
-import TBody from "./Tbody";
+import TBody from "./TBodyWithState";
 
 function Display() {
   return (
-    <table>
+    <table id="tblMain">
       <thead>
         <tr>
           <th>Name</th>
           <th>Job</th>
+          <th>Remove</th>
         </tr>
       </thead>
       <tbody>

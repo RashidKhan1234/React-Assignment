@@ -7,5 +7,22 @@ tr {
 }
 table {
   border-collapse: collapse;
-  width: 50%;
+  width: 100%;
+}
+.dltButton {
+  background-color: #008cba;
+  font-size: 14px;
+}
+.txt {
+  text-align: left;
+}
+.inp {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.green {
+  background-color: #00ba6c;
+  margin-top: 20px;
+  float: left;
 }
