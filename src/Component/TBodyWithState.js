@@ -41,13 +41,25 @@ class TBodyClass extends Component {
     });
   };
   SubmitHandler = (event) => {
-    alert(`${this.state.name} ${this.state.job}`);
-
     let a = Math.max.apply(
       null,
       this.state.List.map((item) => item.id)
     );
     console.log(a + 1);
+
+    // alert(`${this.state.name} ${this.state.job} ${a + 1}`);
+    if (this.state.name === "" || this.state.job === "") {
+      alert("please fill all details");
+    } else {
+      console.log(this.state.List);
+      var items = { id: a + 1, Name: this.state.name, SN: this.state.job };
+      console.log("item new");
+
+      this.state.List.push(items);
+      this.setState({
+        List: this.state.List
+      });
+    }
 
     event.preventDefault();
   };
@@ -57,6 +69,7 @@ class TBodyClass extends Component {
       window.confirm("are you sure you want to delete record for " + personName)
     ) {
       let List = this.state.List.filter((p) => p.id !== personId);
+
       this.setState({
         List: List
       });
@@ -105,7 +118,7 @@ class TBodyClass extends Component {
             <br></br>
           </div>
           <button className="green" type="submit">
-            Submit
+            Add
           </button>
         </form>
       </div>

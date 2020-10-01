@@ -19,7 +19,7 @@ class AddForm extends Component {
     });
   };
   SubmitHandler = (event) => {
-    alert(`${this.state.name} ${this.state.job}`);
+    <TBodyClass props={this.state} />;
     event.preventDefault();
   };
   render() {
