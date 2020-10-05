@@ -12,6 +12,7 @@ table {
 .dltButton {
   background-color: #008cba;
   font-size: 14px;
+  width: 100px;
 }
 .txt {
   text-align: left;
@@ -25,4 +26,7 @@ table {
   background-color: #00ba6c;
   margin-top: 20px;
   float: left;
+}
+.calc {
+  top: 50px;
 }
